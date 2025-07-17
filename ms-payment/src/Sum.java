@@ -15,21 +15,55 @@ public class Sum {
 //    }
 
 
+//    public static void main(String[] args) {
+//        int number = 121;
+//        int original = number;
+//        int reversed = 0;
+//
+//        while (number > 0) {
+//            int digit = number % 10;
+//            reversed = (reversed * 10) + digit;
+//            number = number / 10;
+//        }
+//
+//        if (original == reversed) {
+//            System.out.println("Palindromdur");
+//        } else {
+//            System.out.println("Palindrom deyil");
+//        }
+//    }
+
+
     public static void main(String[] args) {
-        int number = 121;
-        int original = number;
-        int reversed = 0;
+        String s= "XIV";
+        int result =0;
+        int prev=0;
+        for(int i=s.length()-1;i>=0;i--){
+            char c=s.charAt(i);
+            int current =0;
 
-        while (number > 0) {
-            int digit = number % 10;
-            reversed = (reversed * 10) + digit;
-            number = number / 10;
+            if (c == 'I') current = 1;
+            else if (c == 'V') current = 5;
+            else if (c == 'X') current = 10;
+            else if (c == 'L') current = 50;
+            else if (c == 'C') current = 100;
+            else if (c== 'D') current = 500;
+            else if (c == 'M') current = 1000;
+
+            if(current <prev){
+                result-= current;
+            }else{
+                result+= current;
+            }
+
+
+            prev= current;
+
+
         }
 
-        if (original == reversed) {
-            System.out.println("Palindromdur");
-        } else {
-            System.out.println("Palindrom deyil");
-        }
+        System.out.println(result);
     }
+
+
 }
