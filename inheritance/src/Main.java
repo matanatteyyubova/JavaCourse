@@ -32,5 +32,29 @@ public class Main {
         student.changeCourse(newCourse);
         System.out.println("-- After changing course --");
         System.out.println("New Course: " + student.course);
+
+
+
+    //[INSTRUCTOR INFO]
+        System.out.println("Enter Instructor Full Name:");
+        Instructor instructor =new Instructor();
+        instructor.fullName = scanner.nextLine();
+
+        System.out.println("Enter Instructor Age:");
+        instructor.age = scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("Enter Instructor subject:");
+        instructor.subject =scanner.nextLine();
+
+        System.out.println("Enter Instructor Department:");
+        instructor.department=scanner.nextLine();
+
+        System.out.println("\nVowels in in name: " + instructor.countVowelsInName());
+        System.out.println("\nIs name longer than 10?" + instructor.isNameLongerThan(10));
+        System.out.println("\nEnter prefix to check in subject:");
+        String prefix =scanner.nextLine();
+        System.out.println("Does subject start with " + prefix + "?" + instructor.isSubjectStartsWith(prefix));
+
+
     }
 }
